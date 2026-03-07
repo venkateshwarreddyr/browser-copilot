@@ -3,6 +3,7 @@
 
   let { onClose } = $props();
   let backendUrl = $state('');
+  let apiKey = $state('');
   let model = $state('');
   let systemPrompt = $state('');
   let autoApprovePlans = $state(false);
@@ -12,6 +13,7 @@
   $effect(() => {
     getSettings().then((s) => {
       backendUrl = s.backendUrl;
+      apiKey = s.apiKey || '';
       model = s.model;
       systemPrompt = s.systemPrompt || '';
       autoApprovePlans = Boolean(s.autoApprovePlans);
@@ -20,7 +22,7 @@
   });
 
   async function save() {
-    await saveSettings({ backendUrl, model, systemPrompt, autoApprovePlans, persistSession });
+    await saveSettings({ backendUrl, apiKey, model, systemPrompt, autoApprovePlans, persistSession });
     saved = true;
     setTimeout(() => {
       saved = false;
@@ -40,6 +42,11 @@
   <label>
     Backend URL
     <input type="text" bind:value={backendUrl} placeholder="http://localhost:3001" />
+  </label>
+
+  <label>
+    API Key
+    <input type="password" bind:value={apiKey} placeholder="(optional — matches API_SECRET on server)" />
   </label>
 
   <label>
@@ -124,6 +131,7 @@
   }
 
   input[type='text'],
+  input[type='password'],
   textarea {
     display: block;
     width: 100%;

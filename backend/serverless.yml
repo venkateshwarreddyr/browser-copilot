@@ -11,6 +11,9 @@ provider:
     HUGGING_FACE_TOKEN: ${env:HUGGING_FACE_TOKEN, ''}
     LLM_API_KEY: ${env:LLM_API_KEY, ''}
     LLM_MODEL: ${env:LLM_MODEL, 'grok-3'}
+    API_SECRET: ${env:API_SECRET, ''}
+    ALLOWED_ORIGINS: ${env:ALLOWED_ORIGINS, ''}
+    MAX_BODY_BYTES: ${env:MAX_BODY_BYTES, '1048576'}
 
 functions:
   chat:

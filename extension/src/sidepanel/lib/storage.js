@@ -1,5 +1,6 @@
 const DEFAULTS = {
   backendUrl: 'http://localhost:3001',
+  apiKey: '',
   model: '',
   systemPrompt: '',
   autoApprovePlans: false,

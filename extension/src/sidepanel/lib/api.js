@@ -5,9 +5,14 @@ export async function streamChat({ messages, tools, system, model, onEvent }) {
   const settings = await getSettings();
   const backendUrl = settings.backendUrl || 'http://localhost:3001';
 
+  const headers = { 'Content-Type': 'application/json' };
+  if (settings.apiKey) {
+    headers['X-API-Key'] = settings.apiKey;
+  }
+
   const response = await fetch(`${backendUrl}/chat`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ messages, tools, system, model: model || settings.model }),
   });
 
