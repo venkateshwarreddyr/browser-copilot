@@ -1,0 +1,12 @@
+.env
+node_modules/
+dist/
+build/
+coverage/
+.svelte-kit/
+.vite/
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

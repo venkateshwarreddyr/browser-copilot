@@ -1,0 +1,18 @@
+{
+  "name": "browser-copilot-2-claude-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/local-server.js",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "serverless": "^4.4.0"
+  }
+}

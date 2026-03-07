@@ -1,0 +1,28 @@
+service: browser-copilot-2-claude-backend
+frameworkVersion: "4"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  environment:
+    LLM_BASE_URL: ${env:LLM_BASE_URL}
+    LLM_API_KEY: ${env:LLM_API_KEY}
+    LLM_MODEL: ${env:LLM_MODEL, 'grok-3'}
+
+functions:
+  chat:
+    handler: src/handler.chat
+    timeout: 120
+    url:
+      cors: true
+    events:
+      - httpApi:
+          path: /chat
+          method: post
+
+package:
+  patterns:
+    - src/**
+    - package.json
+    - package-lock.json
