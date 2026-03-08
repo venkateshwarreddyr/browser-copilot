@@ -72,18 +72,18 @@
   .quick-prompts {
     display: flex;
     gap: 6px;
-    padding: 6px 10px 0;
+    padding: 6px 12px 0;
     overflow-x: auto;
     background: transparent;
     scroll-snap-type: x mandatory;
   }
 
   .quick-prompts::-webkit-scrollbar {
-    height: 4px;
+    height: 3px;
   }
 
   .quick-prompts::-webkit-scrollbar-thumb {
-    background: #44403c;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 999px;
   }
 
@@ -91,43 +91,49 @@
     scroll-snap-align: start;
     min-width: 200px;
     text-align: left;
-    border: 1px solid #3f3a36;
-    background: #1c1917;
-    color: #a8a29e;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+    color: #71717a;
     border-radius: 12px;
-    padding: 8px 10px;
-    font-size: 11px;
+    padding: 9px 12px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 1.35;
+    line-height: 1.4;
     cursor: pointer;
-    transition: all 100ms ease;
+    transition: all 150ms ease;
   }
 
   .prompt-chip:hover:not(:disabled) {
-    background: #292524;
-    border-color: #57534e;
-    color: #d6d3d1;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #a1a1aa;
   }
 
   .prompt-chip:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
   }
 
   /* ─── Composer area ─── */
   .composer-area {
-    padding: 6px 10px 8px;
-    background: #292524;
+    padding: 8px 14px 10px;
+    background: transparent;
     flex-shrink: 0;
   }
 
   .composer {
-    background: #f5f5f4;
-    border-radius: 18px;
-    padding: 10px 14px 6px;
+    background: #18181b;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 12px 16px 8px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    transition: border-color 200ms ease;
+  }
+
+  .composer:focus-within {
+    border-color: rgba(255, 255, 255, 0.14);
   }
 
   textarea {
@@ -138,19 +144,19 @@
     border: none;
     outline: none;
     font-size: 14px;
-    line-height: 1.45;
+    line-height: 1.5;
     font-family: inherit;
-    color: #1c1917;
+    color: #e4e4e7;
     background: transparent;
     padding: 0;
   }
 
   textarea::placeholder {
-    color: #a8a29e;
+    color: #52525b;
   }
 
   textarea:disabled {
-    color: #78716c;
+    color: #3f3f46;
     cursor: not-allowed;
   }
 
@@ -158,7 +164,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2px 0;
+    padding: 4px 0 2px;
   }
 
   .composer-bar-left {
@@ -172,15 +178,16 @@
     gap: 4px;
     font-size: 12px;
     font-weight: 500;
-    color: #78716c;
+    color: #52525b;
     cursor: pointer;
-    padding: 3px 6px;
-    border-radius: 6px;
-    transition: background 100ms ease;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 120ms ease;
   }
 
   .safety-badge:hover {
-    background: #e7e5e4;
+    background: rgba(255, 255, 255, 0.05);
+    color: #71717a;
   }
 
   .composer-bar-right {
@@ -193,23 +200,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border: none;
     background: transparent;
-    color: #78716c;
-    border-radius: 8px;
+    color: #3f3f46;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 100ms ease;
+    transition: all 150ms ease;
   }
 
   .bar-icon:hover:not(:disabled) {
-    background: #e7e5e4;
-    color: #44403c;
+    background: rgba(255, 255, 255, 0.05);
+    color: #71717a;
   }
 
   .bar-icon:disabled {
-    opacity: 0.35;
+    opacity: 0.25;
     cursor: not-allowed;
   }
 
@@ -217,45 +224,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border: none;
-    background: #1c1917;
-    color: #fafaf9;
+    background: #e4e4e7;
+    color: #09090b;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 100ms ease;
+    transition: all 150ms ease;
   }
 
   .send-btn:hover:not(:disabled) {
-    background: #44403c;
+    background: #ffffff;
   }
 
   .send-btn:disabled {
-    background: #d6d3d1;
-    color: #a8a29e;
+    background: #27272a;
+    color: #3f3f46;
     cursor: not-allowed;
   }
 
   .send-btn.stop {
-    background: #1c1917;
-    color: #fafaf9;
+    background: #e4e4e7;
+    color: #09090b;
   }
 
   .send-btn.stop:hover {
-    background: #44403c;
+    background: #ffffff;
   }
 
   .composer.disabled {
-    background: #e7e5e4;
-    opacity: 0.7;
+    opacity: 0.5;
+    border-color: rgba(255, 255, 255, 0.04);
   }
 
   .disclaimer {
     text-align: center;
     font-size: 11px;
-    color: #78716c;
-    margin: 6px 0 0;
+    color: #3f3f46;
+    margin: 8px 0 2px;
     line-height: 1.3;
   }
 </style>

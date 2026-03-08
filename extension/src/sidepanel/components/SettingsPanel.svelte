@@ -1,7 +1,8 @@
 <script>
-  import { getSettings, saveSettings } from '../lib/storage.js';
+  import { getSettings, saveSettings, ENVIRONMENTS } from '../lib/storage.js';
 
   let { onClose } = $props();
+  let environment = $state('local');
   let backendUrl = $state('');
   let apiKey = $state('');
   let model = $state('');
@@ -12,6 +13,7 @@
 
   $effect(() => {
     getSettings().then((s) => {
+      environment = s.environment || 'local';
       backendUrl = s.backendUrl;
       apiKey = s.apiKey || '';
       model = s.model;
@@ -21,8 +23,17 @@
     });
   });
 
+  function switchEnv(env) {
+    environment = env;
+    const preset = ENVIRONMENTS[env];
+    if (preset) {
+      backendUrl = preset.backendUrl;
+      apiKey = preset.apiKey;
+    }
+  }
+
   async function save() {
-    await saveSettings({ backendUrl, apiKey, model, systemPrompt, autoApprovePlans, persistSession });
+    await saveSettings({ environment, backendUrl, apiKey, model, systemPrompt, autoApprovePlans, persistSession });
     saved = true;
     setTimeout(() => {
       saved = false;
@@ -38,6 +49,22 @@
     </div>
     <button class="close" onclick={onClose} aria-label="Close settings">&times;</button>
   </div>
+
+  <label>
+    Environment
+    <div class="env-switcher">
+      {#each Object.entries(ENVIRONMENTS) as [key, env]}
+        <button
+          class="env-btn"
+          class:active={environment === key}
+          onclick={() => switchEnv(key)}
+        >
+          <span class="env-dot" class:local={key === 'local'} class:prod={key === 'prod'}></span>
+          {env.label}
+        </button>
+      {/each}
+    </div>
+  </label>
 
   <label>
     Backend URL
@@ -128,6 +155,55 @@
     font-weight: 650;
     color: #a8a29e;
     margin-bottom: 10px;
+  }
+
+  .env-switcher {
+    display: flex;
+    gap: 6px;
+    margin-top: 5px;
+  }
+
+  .env-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border: 1px solid #3f3a36;
+    border-radius: 9px;
+    background: #1c1917;
+    color: #a8a29e;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: all 100ms ease;
+  }
+
+  .env-btn:hover {
+    border-color: #57534e;
+    color: #d6d3d1;
+  }
+
+  .env-btn.active {
+    border-color: #d4845a;
+    background: rgba(212, 132, 90, 0.1);
+    color: #d4845a;
+  }
+
+  .env-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .env-dot.local {
+    background: #4ade80;
+  }
+
+  .env-dot.prod {
+    background: #f97316;
   }
 
   input[type='text'],

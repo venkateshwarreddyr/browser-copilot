@@ -96,18 +96,23 @@
   .connector {
     position: absolute;
     left: 19px;
-    top: -10px;
-    width: 1.5px;
-    height: 10px;
-    background: #44403c;
+    top: -8px;
+    width: 1px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.06);
   }
 
   .step-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 6px 8px;
-    border-radius: 8px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    transition: background 120ms ease;
+  }
+
+  .step-row:hover {
+    background: rgba(255, 255, 255, 0.02);
   }
 
   .step-icon {
@@ -117,46 +122,46 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    color: #78716c;
+    color: #3f3f46;
   }
 
   .step.running .step-icon {
-    color: #d4845a;
+    color: #a78bfa;
     animation: pulse-icon 1.5s ease-in-out infinite;
   }
 
   .step.error .step-icon {
-    color: #f87171;
+    color: #fb7185;
   }
 
   @keyframes pulse-icon {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    50% { opacity: 0.35; }
   }
 
   .step-label {
     font-size: 13px;
     font-weight: 500;
-    color: #a8a29e;
+    color: #52525b;
     line-height: 1.3;
   }
 
   .step.running .step-label {
-    color: #d6d3d1;
+    color: #d4d4d8;
   }
 
   .step.error .step-label {
-    color: #f87171;
+    color: #fb7185;
   }
 
   /* When rendered as a persisted timeline message (not live) */
   .timeline:not(.live) .step-icon {
-    color: #78716c;
+    color: #3f3f46;
     animation: none;
   }
 
   .timeline:not(.live) .step-label {
-    color: #a8a29e;
+    color: #52525b;
   }
 
   /* Completed step indicator: Done badge */

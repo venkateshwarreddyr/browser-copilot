@@ -41,13 +41,13 @@
 
   /* ─── User bubble ─── */
   .user-bubble {
-    max-width: 88%;
-    background: #44403c;
-    border-radius: 16px 16px 4px 16px;
-    padding: 10px 14px;
+    max-width: 85%;
+    background: #27272a;
+    border-radius: 18px 18px 4px 18px;
+    padding: 11px 16px;
     font-size: 14px;
-    line-height: 1.5;
-    color: #fafaf9;
+    line-height: 1.55;
+    color: #e4e4e7;
     white-space: pre-wrap;
     word-break: break-word;
   }
@@ -56,11 +56,11 @@
   .assistant-msg {
     max-width: 100%;
     font-size: 14px;
-    line-height: 1.6;
-    color: #d6d3d1;
+    line-height: 1.65;
+    color: #a1a1aa;
     white-space: pre-wrap;
     word-break: break-word;
-    padding: 2px 4px;
+    padding: 4px 2px;
   }
 
   .content {
@@ -69,7 +69,7 @@
 
   .cursor {
     animation: blink 1s step-end infinite;
-    color: #d4845a;
+    color: #a78bfa;
     font-weight: 700;
     margin-left: 2px;
   }

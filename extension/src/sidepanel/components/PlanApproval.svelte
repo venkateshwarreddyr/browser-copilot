@@ -36,38 +36,38 @@
 
 <style>
   .plan-card {
-    margin: 6px 0;
-    padding: 14px;
-    background: #292524;
-    border: 1px solid #d4845a;
-    border-radius: 14px;
+    margin: 8px 0;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 16px;
   }
 
   .plan-header {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .title {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 14px;
-    color: #fbbf24;
+    color: #e4e4e7;
   }
 
   .subtitle {
     font-size: 12px;
-    color: #a8a29e;
-    margin-top: 3px;
+    color: #52525b;
+    margin-top: 4px;
   }
 
   .section {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .section-title {
     font-size: 11px;
-    font-weight: 800;
-    color: #d4845a;
-    margin-bottom: 5px;
+    font-weight: 700;
+    color: #a78bfa;
+    margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -77,8 +77,8 @@
     margin: 0;
     padding-left: 18px;
     font-size: 13px;
-    color: #d6d3d1;
-    line-height: 1.45;
+    color: #a1a1aa;
+    line-height: 1.5;
   }
 
   li {
@@ -89,37 +89,37 @@
     display: flex;
     justify-content: flex-end;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 14px;
   }
 
   .approve,
   .reject {
     border: 1px solid transparent;
-    border-radius: 9px;
-    padding: 7px 12px;
+    border-radius: 10px;
+    padding: 8px 14px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 100ms ease;
+    transition: all 150ms ease;
   }
 
   .approve {
-    background: #16a34a;
-    color: #fff;
-    border-color: #15803d;
+    background: #4ade80;
+    color: #09090b;
+    border-color: transparent;
   }
 
   .approve:hover {
-    background: #15803d;
+    background: #22c55e;
   }
 
   .reject {
-    background: #292524;
-    border-color: #7f1d1d;
-    color: #f87171;
+    background: transparent;
+    border-color: rgba(244, 63, 94, 0.2);
+    color: #fb7185;
   }
 
   .reject:hover {
-    background: #451a1a;
+    background: rgba(244, 63, 94, 0.08);
   }
 </style>

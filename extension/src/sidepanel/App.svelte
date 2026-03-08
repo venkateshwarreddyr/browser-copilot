@@ -399,9 +399,9 @@
 <style>
   :global(body) {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: #292524;
-    color: #e7e5e4;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #0c0c0c;
+    color: #e4e4e7;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -413,7 +413,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #292524;
+    background: #0c0c0c;
   }
 
   /* ─── Top bar ─── */
@@ -421,8 +421,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 8px;
-    background: #292524;
+    padding: 12px 16px;
+    background: transparent;
     flex-shrink: 0;
   }
 
@@ -436,46 +436,45 @@
     display: flex;
     align-items: center;
     gap: 2px;
-    background: #1c1917;
-    border: 1px solid #3f3a36;
-    border-radius: 10px;
-    padding: 2px;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
 
   .topbar-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     border: none;
     background: transparent;
-    color: #a8a29e;
-    border-radius: 6px;
+    color: #52525b;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 100ms ease;
+    transition: all 150ms ease;
   }
 
   .topbar-btn:hover {
-    background: #3f3a36;
-    color: #e7e5e4;
+    background: rgba(255, 255, 255, 0.06);
+    color: #a1a1aa;
   }
 
   .topbar-btn.active {
-    background: #44403c;
-    color: #fafaf9;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e4e4e7;
   }
 
   .topbar-btn.danger {
-    color: #fca5a5;
+    color: #fb7185;
   }
 
   .topbar-btn.danger:hover {
-    background: #451a1a;
+    background: rgba(244, 63, 94, 0.1);
   }
 
   .topbar-btn:disabled {
-    opacity: 0.4;
+    opacity: 0.25;
     cursor: not-allowed;
   }
 
@@ -483,13 +482,14 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #ef4444;
+    background: #f43f5e;
     animation: pulse-dot 1.2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
   }
 
   @keyframes pulse-dot {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    50% { opacity: 0.25; }
   }
 
   /* ─── Dropdown menu ─── */
@@ -500,83 +500,87 @@
   .dropdown-menu {
     position: absolute;
     right: 0;
-    top: 38px;
-    min-width: 180px;
-    background: #1c1917;
-    border: 1px solid #3f3a36;
-    border-radius: 12px;
+    top: 44px;
+    min-width: 200px;
+    background: #161618;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
     padding: 4px;
     z-index: 100;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.03);
   }
 
   .menu-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border: none;
     background: transparent;
-    color: #d6d3d1;
+    color: #a1a1aa;
     font-size: 13px;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: left;
-    transition: background 100ms ease;
+    transition: all 120ms ease;
   }
 
   .menu-item:hover {
-    background: #292524;
-    color: #fafaf9;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e4e4e7;
   }
 
   .menu-item:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
   }
 
-  /* ─── Inner rounded panel ─── */
+  /* ─── Inner panel (seamless) ─── */
   .inner-panel {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin: 0 6px;
-    background: #1c1917;
-    border-radius: 16px;
-    border: 1px solid #3f3a36;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     overflow: hidden;
     min-height: 0;
   }
 
   /* ─── Teach status ─── */
   .teach-status {
-    padding: 8px 12px;
+    padding: 10px 18px;
     font-size: 12px;
     font-weight: 500;
-    color: #a8a29e;
-    border-bottom: 1px solid #2e2926;
+    color: #71717a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   /* ─── Workflows ─── */
   .workflow-list {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-    max-height: 140px;
+    gap: 0;
+    max-height: 150px;
     overflow-y: auto;
-    border-bottom: 1px solid #2e2926;
-    background: #292524;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   .workflow-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-    padding: 8px 12px;
-    background: #1c1917;
+    gap: 10px;
+    padding: 10px 18px;
+    background: transparent;
+    transition: background 120ms ease;
+  }
+
+  .workflow-item:hover {
+    background: rgba(255, 255, 255, 0.02);
   }
 
   .workflow-info {
@@ -585,9 +589,9 @@
   }
 
   .workflow-name {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    color: #d6d3d1;
+    color: #d4d4d8;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -595,108 +599,119 @@
 
   .workflow-meta {
     font-size: 11px;
-    color: #78716c;
-    margin-top: 1px;
+    color: #52525b;
+    margin-top: 2px;
   }
 
   .workflow-actions {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     flex-shrink: 0;
   }
 
   .wf-btn {
-    padding: 4px 10px;
-    border: 1px solid #44403c;
-    background: #292524;
-    color: #a8a29e;
-    border-radius: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: #a1a1aa;
+    border-radius: 8px;
     font-size: 11px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 100ms ease;
+    transition: all 120ms ease;
   }
 
   .wf-btn:hover:not(:disabled) {
-    background: #44403c;
-    color: #e7e5e4;
+    background: rgba(255, 255, 255, 0.07);
+    color: #e4e4e7;
   }
 
   .wf-btn:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
   }
 
   .wf-btn.run {
-    border-color: #3f6212;
-    color: #a3e635;
+    border-color: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.05);
   }
 
   .wf-btn.run:hover:not(:disabled) {
-    background: #1a2e05;
+    background: rgba(74, 222, 128, 0.1);
   }
 
   .wf-btn.del {
-    border-color: #7f1d1d;
-    color: #f87171;
+    border-color: rgba(244, 63, 94, 0.2);
+    color: #fb7185;
     font-size: 14px;
-    padding: 2px 8px;
+    padding: 3px 9px;
+    background: rgba(244, 63, 94, 0.05);
   }
 
   .wf-btn.del:hover:not(:disabled) {
-    background: #451a1a;
+    background: rgba(244, 63, 94, 0.1);
   }
 
   /* ─── Settings ─── */
   .settings-wrap {
-    padding: 10px 12px;
-    border-bottom: 1px solid #2e2926;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   /* ─── Messages ─── */
   .messages {
     flex: 1;
     overflow-y: auto;
-    padding: 16px 14px 14px;
+    padding: 24px 18px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     scroll-behavior: smooth;
   }
 
   .messages::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
+  }
+
+  .messages::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   .messages::-webkit-scrollbar-thumb {
-    background: #44403c;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 999px;
+  }
+
+  .messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   /* ─── Empty state ─── */
   .empty-state {
     margin: auto;
     text-align: center;
-    max-width: 260px;
-    padding: 16px 12px;
+    max-width: 280px;
+    padding: 32px 16px;
   }
 
   .empty-icon {
-    margin-bottom: 12px;
-    opacity: 0.5;
+    margin-bottom: 20px;
+    opacity: 0.2;
   }
 
   .empty-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    color: #fafaf9;
-    margin: 0 0 8px;
+    color: #e4e4e7;
+    margin: 0 0 10px;
+    letter-spacing: -0.02em;
   }
 
   .empty-copy {
-    font-size: 13px;
-    line-height: 1.5;
-    color: #78716c;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #52525b;
     margin: 0;
   }
 </style>
