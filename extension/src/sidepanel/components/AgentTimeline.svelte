@@ -15,7 +15,7 @@
           <!-- Icon -->
           <div class="step-icon">
             {#if step.status === 'running' && step.name === '_working'}
-              <!-- Nexus spinner -->
+              <!-- Browser spinner -->
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L8 6l4 4-4 4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M12 2l4 4-4 4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

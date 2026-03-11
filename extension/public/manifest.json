@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Nexus Copilot",
+  "name": "Browser Copilot",
   "version": "0.1.0",
-  "description": "AI browser automation copilot powered by Nexus",
+  "description": "AI browser automation copilot powered by Browser",
   "minimum_chrome_version": "116",
   "permissions": [
     "tabs",
@@ -18,7 +18,7 @@
     "type": "module"
   },
   "action": {
-    "default_title": "Nexus Copilot"
+    "default_title": "Browser Copilot"
   },
   "commands": {
     "toggle-side-panel": {
@@ -26,7 +26,7 @@
         "default": "Ctrl+E",
         "mac": "Command+E"
       },
-      "description": "Toggle Nexus Copilot side panel"
+      "description": "Toggle Browser Copilot side panel"
     }
   },
   "side_panel": {

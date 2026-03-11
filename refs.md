@@ -1,14 +1,14 @@
 > ## Documentation Index
-> Fetch the complete documentation index at: https://code.nexus.com/docs/llms.txt
+> Fetch the complete documentation index at: https://code.browser.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-# Use Nexus Code with Chrome (beta)
+# Use Browser Code with Chrome (beta)
 
-> Connect Nexus Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.
+> Connect Browser Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.
 
-Nexus Code integrates with the Nexus in Chrome browser extension to give you browser automation capabilities from the CLI or the [VS Code extension](/en/vs-code#automate-browser-tasks-with-chrome). Build your code, then test and debug in the browser without switching contexts.
+Browser Code integrates with the Browser in Chrome browser extension to give you browser automation capabilities from the CLI or the [VS Code extension](/en/vs-code#automate-browser-tasks-with-chrome). Build your code, then test and debug in the browser without switching contexts.
 
-Nexus opens new tabs for browser tasks and shares your browser's login state, so it can access any site you're already signed into. Browser actions run in a visible Chrome window in real time. When Nexus encounters a login page or CAPTCHA, it pauses and asks you to handle it manually.
+Browser opens new tabs for browser tasks and shares your browser's login state, so it can access any site you're already signed into. Browser actions run in a visible Chrome window in real time. When Browser encounters a login page or CAPTCHA, it pauses and asks you to handle it manually.
 
 <Note>
   Chrome integration is in beta and currently works with Google Chrome and Microsoft Edge. It is not yet supported on Brave, Arc, or other Chromium-based browsers. WSL (Windows Subsystem for Linux) is also not supported.
@@ -28,35 +28,35 @@ With Chrome connected, you can chain browser actions with coding tasks in a sing
 
 ## Prerequisites
 
-Before using Nexus Code with Chrome, you need:
+Before using Browser Code with Chrome, you need:
 
 * [Google Chrome](https://www.google.com/chrome/) or [Microsoft Edge](https://www.microsoft.com/edge) browser
-* [Nexus in Chrome extension](https://chromewebstore.google.com/detail/nexus/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or higher, available in the Chrome Web Store for both browsers
-* [Nexus Code](/en/quickstart#step-1-install-nexus-code) version 2.0.73 or higher
+* [Browser in Chrome extension](https://chromewebstore.google.com/detail/browser/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or higher, available in the Chrome Web Store for both browsers
+* [Browser Code](/en/quickstart#step-1-install-browser-code) version 2.0.73 or higher
 * A direct Anthropic plan (Pro, Max, Teams, or Enterprise)
 
 <Note>
-  Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If you access Nexus exclusively through a third-party provider, you need a separate nexus.ai account to use this feature.
+  Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If you access Browser exclusively through a third-party provider, you need a separate browser.ai account to use this feature.
 </Note>
 
 ## Get started in the CLI
 
 <Steps>
-  <Step title="Launch Nexus Code with Chrome">
-    Start Nexus Code with the `--chrome` flag:
+  <Step title="Launch Browser Code with Chrome">
+    Start Browser Code with the `--chrome` flag:
 
     ```bash  theme={null}
-    nexus --chrome
+    browser --chrome
     ```
 
     You can also enable Chrome from within an existing session by running `/chrome`.
   </Step>
 
-  <Step title="Ask Nexus to use the browser">
+  <Step title="Ask Browser to use the browser">
     This example navigates to a page, interacts with it, and reports what it finds, all from your terminal or editor:
 
     ```text  theme={null}
-    Go to code.nexus.com/docs, click on the search box,
+    Go to code.browser.com/docs, click on the search box,
     type "hooks", and tell me what results appear
     ```
   </Step>
@@ -78,15 +78,15 @@ In the [VS Code extension](/en/vs-code#automate-browser-tasks-with-chrome), Chro
 
 ### Manage site permissions
 
-Site-level permissions are inherited from the Chrome extension. Manage permissions in the Chrome extension settings to control which sites Nexus can browse, click, and type on.
+Site-level permissions are inherited from the Chrome extension. Manage permissions in the Chrome extension settings to control which sites Browser can browse, click, and type on.
 
 ## Example workflows
 
-These examples show common ways to combine browser actions with coding tasks. Run `/mcp` and select `nexus-in-chrome` to see the full list of available browser tools.
+These examples show common ways to combine browser actions with coding tasks. Run `/mcp` and select `browser-in-chrome` to see the full list of available browser tools.
 
 ### Test a local web application
 
-When developing a web app, ask Nexus to verify your changes work correctly:
+When developing a web app, ask Browser to verify your changes work correctly:
 
 ```text  theme={null}
 I just updated the login form validation. Can you open localhost:3000,
@@ -94,18 +94,18 @@ try submitting the form with invalid data, and check if the error
 messages appear correctly?
 ```
 
-Nexus navigates to your local server, interacts with the form, and reports what it observes.
+Browser navigates to your local server, interacts with the form, and reports what it observes.
 
 ### Debug with console logs
 
-Nexus can read console output to help diagnose problems. Tell Nexus what patterns to look for rather than asking for all console output, since logs can be verbose:
+Browser can read console output to help diagnose problems. Tell Browser what patterns to look for rather than asking for all console output, since logs can be verbose:
 
 ```text  theme={null}
 Open the dashboard page and check the console for any errors when
 the page loads.
 ```
 
-Nexus reads the console messages and can filter for specific patterns or error types.
+Browser reads the console messages and can filter for specific patterns or error types.
 
 ### Automate form filling
 
@@ -117,18 +117,18 @@ go to the CRM at crm.example.com, click "Add Contact", and fill in the
 name, email, and phone fields.
 ```
 
-Nexus reads your local file, navigates the web interface, and enters the data for each record.
+Browser reads your local file, navigates the web interface, and enters the data for each record.
 
 ### Draft content in Google Docs
 
-Use Nexus to write directly in your documents without API setup:
+Use Browser to write directly in your documents without API setup:
 
 ```text  theme={null}
 Draft a project update based on the recent commits and add it to my
 Google Doc at docs.google.com/document/d/abc123
 ```
 
-Nexus opens the document, clicks into the editor, and types the content. This works with any web app you're logged into: Gmail, Notion, Sheets, and more.
+Browser opens the document, clicks into the editor, and types the content. This works with any web app you're logged into: Gmail, Notion, Sheets, and more.
 
 ### Extract data from web pages
 
@@ -139,7 +139,7 @@ Go to the product listings page and extract the name, price, and
 availability for each item. Save the results as a CSV file.
 ```
 
-Nexus navigates to the page, reads the content, and compiles the data into a structured format.
+Browser navigates to the page, reads the content, and compiles the data into a structured format.
 
 ### Run multi-site workflows
 
@@ -151,7 +151,7 @@ an external attendee, look up their company website and add a note
 about what they do.
 ```
 
-Nexus works across tabs to gather information and complete the workflow.
+Browser works across tabs to gather information and complete the workflow.
 
 ### Record a demo GIF
 
@@ -162,21 +162,21 @@ Record a GIF showing how to complete the checkout flow, from adding
 an item to the cart through to the confirmation page.
 ```
 
-Nexus records the interaction sequence and saves it as a GIF file.
+Browser records the interaction sequence and saves it as a GIF file.
 
 ## Troubleshooting
 
 ### Extension not detected
 
-If Nexus Code shows "Chrome extension not detected":
+If Browser Code shows "Chrome extension not detected":
 
 1. Verify the Chrome extension is installed and enabled in `chrome://extensions`
-2. Verify Nexus Code is up to date by running `nexus --version`
+2. Verify Browser Code is up to date by running `browser --version`
 3. Check that Chrome is running
 4. Run `/chrome` and select "Reconnect extension" to re-establish the connection
-5. If the issue persists, restart both Nexus Code and Chrome
+5. If the issue persists, restart both Browser Code and Chrome
 
-The first time you enable Chrome integration, Nexus Code installs a native messaging host configuration file. Chrome reads this file on startup, so if the extension isn't detected on your first attempt, restart Chrome to pick up the new configuration.
+The first time you enable Chrome integration, Browser Code installs a native messaging host configuration file. Chrome reads this file on startup, so if the extension isn't detected on your first attempt, restart Chrome to pick up the new configuration.
 
 If the connection still fails, verify the host configuration file exists at:
 
@@ -194,10 +194,10 @@ For Edge:
 
 ### Browser not responding
 
-If Nexus's browser commands stop working:
+If Browser's browser commands stop working:
 
-1. Check if a modal dialog (alert, confirm, prompt) is blocking the page. JavaScript dialogs block browser events and prevent Nexus from receiving commands. Dismiss the dialog manually, then tell Nexus to continue.
-2. Ask Nexus to create a new tab and try again
+1. Check if a modal dialog (alert, confirm, prompt) is blocking the page. JavaScript dialogs block browser events and prevent Browser from receiving commands. Dismiss the dialog manually, then tell Browser to continue.
+2. Ask Browser to create a new tab and try again
 3. Restart the Chrome extension by disabling and re-enabling it in `chrome://extensions`
 
 ### Connection drops during long sessions
@@ -208,8 +208,8 @@ The Chrome extension's service worker can go idle during extended sessions, whic
 
 On Windows, you may encounter:
 
-* **Named pipe conflicts (EADDRINUSE)**: if another process is using the same named pipe, restart Nexus Code. Close any other Nexus Code sessions that might be using Chrome.
-* **Native messaging host errors**: if the native messaging host crashes on startup, try reinstalling Nexus Code to regenerate the host configuration.
+* **Named pipe conflicts (EADDRINUSE)**: if another process is using the same named pipe, restart Browser Code. Close any other Browser Code sessions that might be using Chrome.
+* **Native messaging host errors**: if the native messaging host crashes on startup, try reinstalling Browser Code to regenerate the host configuration.
 
 ### Common error messages
 
@@ -217,18 +217,18 @@ These are the most frequently encountered errors and how to resolve them:
 
 | Error                                | Cause                                            | Fix                                                             |
 | ------------------------------------ | ------------------------------------------------ | --------------------------------------------------------------- |
-| "Browser extension is not connected" | Native messaging host cannot reach the extension | Restart Chrome and Nexus Code, then run `/chrome` to reconnect |
+| "Browser extension is not connected" | Native messaging host cannot reach the extension | Restart Chrome and Browser Code, then run `/chrome` to reconnect |
 | "Extension not detected"             | Chrome extension is not installed or is disabled | Install or enable the extension in `chrome://extensions`        |
-| "No tab available"                   | Nexus tried to act before a tab was ready       | Ask Nexus to create a new tab and retry                        |
+| "No tab available"                   | Browser tried to act before a tab was ready       | Ask Browser to create a new tab and retry                        |
 | "Receiving end does not exist"       | Extension service worker went idle               | Run `/chrome` and select "Reconnect extension"                  |
 
 ## See also
 
-* [Use Nexus Code in VS Code](/en/vs-code#automate-browser-tasks-with-chrome): browser automation in the VS Code extension
+* [Use Browser Code in VS Code](/en/vs-code#automate-browser-tasks-with-chrome): browser automation in the VS Code extension
 * [CLI reference](/en/cli-reference): command-line flags including `--chrome`
-* [Common workflows](/en/common-workflows): more ways to use Nexus Code
-* [Data and privacy](/en/data-usage): how Nexus Code handles your data
-* [Getting started with Nexus in Chrome](https://support.nexus.com/en/articles/12012173-getting-started-with-nexus-in-chrome): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions
+* [Common workflows](/en/common-workflows): more ways to use Browser Code
+* [Data and privacy](/en/data-usage): how Browser Code handles your data
+* [Getting started with Browser in Chrome](https://support.browser.com/en/articles/12012173-getting-started-with-browser-in-chrome): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions
 
 
 Below is a **detailed Software Requirement Specification (SRS)** style document for the **AI Browser Agent** application derived from the workflow shown in the video. This is written in a **formal requirement document format** similar to what engineering teams use before implementation.
@@ -738,4 +738,4 @@ If you want, I can also give you a **much stronger document used in AI startups*
 * **exact browser agent loop**
 * **frontend context building design (very important)**
 
-That document is what teams use when building systems like **Nexus Computer Use / OpenAI Operator**.
+That document is what teams use when building systems like **Browser Computer Use / OpenAI Operator**.

@@ -1,4 +1,4 @@
-In the video you shared (**“Let Nexus handle work in your browser”**), the **Teach feature** is essentially a **demonstration-based automation system**. Instead of writing scripts, the user **shows the AI how to perform a task once**, and the system records and converts those actions into a reusable workflow.
+In the video you shared (**“Let Browser handle work in your browser”**), the **Teach feature** is essentially a **demonstration-based automation system**. Instead of writing scripts, the user **shows the AI how to perform a task once**, and the system records and converts those actions into a reusable workflow.
 
 Below is the **requirement-style explanation of how the Teach feature works**.
 
@@ -336,7 +336,7 @@ update_report
 
 If you're building something similar (which seems likely from your earlier questions), the **real challenge is not recording actions but making them reliable**.
 
-The systems in **Nexus Computer Use / Operator / Browser Use** use a **hybrid approach** combining:
+The systems in **Browser Computer Use / Operator / Browser Use** use a **hybrid approach** combining:
 
 * DOM selectors
 * semantic element understanding

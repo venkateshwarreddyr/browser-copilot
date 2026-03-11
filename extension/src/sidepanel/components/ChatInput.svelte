@@ -27,7 +27,7 @@
     <textarea
       bind:value={text}
       onkeydown={handleKeydown}
-      placeholder="Reply to Nexus"
+      placeholder="Reply to Browser"
       rows="1"
       {disabled}
     ></textarea>
@@ -65,7 +65,7 @@
     </div>
   </div>
 
-  <p class="disclaimer">Nexus is AI and can make mistakes. Please double-check responses.</p>
+  <p class="disclaimer">Browser is AI and can make mistakes. Please double-check responses.</p>
 </div>
 
 <style>

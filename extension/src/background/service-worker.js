@@ -365,12 +365,12 @@ async function ensureTabGroup() {
     createProperties: trackedWindowId ? { windowId: trackedWindowId } : {},
   });
 
-  await chrome.tabGroups.update(groupId, { title: 'Nexus', color: 'blue' });
+  await chrome.tabGroups.update(groupId, { title: 'Browser', color: 'blue' });
 
   // Update tracked context
   trackedGroupId = groupId;
 
-  return { groupId, title: 'Nexus', color: 'blue', created: true };
+  return { groupId, title: 'Browser', color: 'blue', created: true };
 }
 
 async function getTabsContext() {

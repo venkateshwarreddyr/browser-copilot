@@ -81,7 +81,7 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `nexus-session-${Date.now()}.json`;
+    a.download = `browser-session-${Date.now()}.json`;
     a.click();
     URL.revokeObjectURL(url);
     showMenu = false;
@@ -370,8 +370,8 @@
               <path d="M14 14l3 3" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h2 class="empty-title">Teach Nexus your workflow</h2>
-          <p class="empty-copy">Describe your automation goal or use Teach mode to demonstrate a workflow. Nexus will learn the process and repeat it for you.</p>
+          <h2 class="empty-title">Teach Browser your workflow</h2>
+          <p class="empty-copy">Describe your automation goal or use Teach mode to demonstrate a workflow. Browser will learn the process and repeat it for you.</p>
         </div>
       {/if}
 

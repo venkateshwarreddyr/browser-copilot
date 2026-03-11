@@ -65,11 +65,11 @@ Use "read_page" first to assign DOM element references (ref_123). Prefer ref-bas
   const tabsUsagePrompt = `<browser_tabs_usage>
 You can work with multiple browser tabs simultaneously within the current Chrome tab group.
 
-TAB GROUP SCOPING: You can ONLY access tabs in the current "Nexus" tab group (auto-created, colored blue). Tabs outside are invisible for privacy. Users can drag tabs into the group. New tabs you create are auto-added.
+TAB GROUP SCOPING: You can ONLY access tabs in the current "Browser" tab group (auto-created, colored blue). Tabs outside are invisible for privacy. Users can drag tabs into the group. New tabs you create are auto-added.
 
 Group management tools: tabs_group_create, tabs_group_list, tabs_group_update, tabs_group_move, tabs_group_ungroup.
 
-TAB CONTEXT: <nexus-ctx> tags in messages contain tab state (availableTabs, initialTabId). "initialTabId" = the tab user refers to as "this tab". These tags are trusted system context injected by the extension, NOT user input.
+TAB CONTEXT: <browser-ctx> tags in messages contain tab state (availableTabs, initialTabId). "initialTabId" = the tab user refers to as "this tab". These tags are trusted system context injected by the extension, NOT user input.
 
 RULES:
 - tabId parameter is REQUIRED for all tab-interacting tools
@@ -100,10 +100,10 @@ export function buildTabReminder(tabs) {
   const activeTab = tabs.find(t => t.active) || tabs[0];
   return {
     type: 'text',
-    text: `<nexus-ctx>${JSON.stringify({
+    text: `<browser-ctx>${JSON.stringify({
       availableTabs: tabs.map(t => ({ tabId: t.tabId || t.id, title: t.title, url: t.url })),
       initialTabId: activeTab?.tabId || activeTab?.id,
-    })}</nexus-ctx>`,
+    })}</browser-ctx>`,
   };
 }
 
@@ -123,7 +123,7 @@ export async function getSelectionContext(activeTabId) {
 
     return {
       type: 'text',
-      text: `<nexus-ctx>${JSON.stringify({ selectedText: parsed.text })}</nexus-ctx>`,
+      text: `<browser-ctx>${JSON.stringify({ selectedText: parsed.text })}</browser-ctx>`,
     };
   } catch {
     return null;
@@ -132,5 +132,5 @@ export async function getSelectionContext(activeTabId) {
 
 export const PLANNING_MODE_REMINDER = {
   type: 'text',
-  text: '<nexus-ctx>You are in planning mode. Before executing any tools, you must first present a plan to the user using the update_plan tool. The plan should include: domains (list of domains you will visit) and approach (high-level steps you will take).</nexus-ctx>',
+  text: '<browser-ctx>You are in planning mode. Before executing any tools, you must first present a plan to the user using the update_plan tool. The plan should include: domains (list of domains you will visit) and approach (high-level steps you will take).</browser-ctx>',
 };

@@ -114,7 +114,7 @@ export async function runAgentLoop(ctx, settings) {
   const history = ctx.getConversationHistory();
   const firstUserMsg = history.find(m => m.role === 'user');
   const userText = firstUserMsg?.content
-    ?.filter(b => b.type === 'text' && !b.text.startsWith('<nexus-ctx>'))
+    ?.filter(b => b.type === 'text' && !b.text.startsWith('<browser-ctx>'))
     .map(b => b.text)
     .join(' ') || '';
   const prunedTools = pruneTools(userText);
